@@ -1,0 +1,15 @@
+<form>
+    <input type="number" name="id" [(ngModel)] = "saleForm.product.id"  id="txtid" />
+
+    <select type="number" name="name" [(ngModel)] = "saleForm.product.id"  id="txtName" (change)="onChangeName($event)" >
+             
+        <option *ngFor="let item of allProducts" value={{item.id}}> {{item.name}} </option>
+        </select>
+
+
+
+    <input type="number" name="price" [(ngModel)] = "saleForm.product.price"  id="txtPrice" />
+    <input type="number" name="tax" [(ngModel)] = "saleForm.product.tax" id="txtTax" />
+    <input type="number" name="quantity" [(ngModel)] = "saleForm.quantity"  id="txtQuantity" />
+</form>
+
