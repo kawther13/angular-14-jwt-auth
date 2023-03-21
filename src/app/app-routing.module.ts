@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'client', loadChildren: () => import('./client/client-routing.module').then(m => m.ClientRoutingModule) },
+  { path: 'facture', loadChildren: () => import('./facture/facture-routing.module').then(m => m.FactureRoutingModule) },
 ];
 
 @NgModule({

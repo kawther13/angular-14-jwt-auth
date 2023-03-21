@@ -11,10 +11,10 @@ import { AchatService } from '../achat.service';
   styleUrls: ['./creat-achat.component.css']
 })
 
-export class CreatesaleComponent implements OnInit{
-  allProducts: Produit[]=[];
+export class CreatAchatComponent implements OnInit{
+  allProduits: Produit[]=[];
   currentProduct!: Produit;
-    saleForm: Achat = {
+    achatForm: Achat = {
 
       id: 0,
       quantity: 0,
@@ -57,18 +57,18 @@ export class CreatesaleComponent implements OnInit{
     }
     get()
     {
-      this.productService.get().subscribe((data)=>{this.allProducts=data;
+      this.productService.get().subscribe((data)=>{this.allProduits=data;
        // console.log(data);
     });
   }
 
   onChangeName(e:any): void {
   console.log("idProduct  : ",e.target.value);
-    this.productService.getById(this.saleForm.produit.id).subscribe((data)=>{
+    this.productService.getById(this.achatForm.produit.id).subscribe((data)=>{
       console.log("data : ", data);
       this.currentProduct=data;
-      this.saleForm.produit = data;
-      console.log("price : ", this.saleForm.price);
+      this.achatForm.produit = data;
+      console.log("price : ", this.achatForm.price);
    });
    //this.saleForm.product = this.currentProduct;
    
